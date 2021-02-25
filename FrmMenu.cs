@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelModel;
 using HotelBLL;
+using HotelRegulator;
 
 namespace HotelClient
 {
@@ -27,6 +28,7 @@ namespace HotelClient
         {
             lblName.Text = "欢迎" + Name + "光临";
             Win32.AnimateWindow(this.Handle, 300, Win32.AW_HOR_POSITIVE);
+            
         }
 
         private void PbState_Click(object sender, EventArgs e)
@@ -39,6 +41,21 @@ namespace HotelClient
             frmState.roomType = roomSchedules.RoomType;
             frmState.floor = roomSchedules.Floor;
             frmState.Show();
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            ReportBusinessLayerManager report = new ReportBusinessLayerManager();
+            StatementOfAccount statement = report.Soa(IDCard);
+            FrmReportForm frm = new FrmReportForm();
+
+            frm.roomNumber = statement.RoomNumber;
+            frm.IDCard = statement.IDCard;
+            frm.money = statement.money;
+            frm.Describe = statement.Describe;
+            frm.SpendingTime = statement.SpendingTime;
+            frm.TotalConsumption = statement.TotalConsumption;
+            frm.Show();
         }
     }
 }

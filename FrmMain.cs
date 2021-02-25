@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelBLL;
+using HotelModel;
+
 
 namespace HotelClient
 {
@@ -21,7 +24,8 @@ namespace HotelClient
         {
             if (Check())
             {
-                UserLogin userLogin = userLoginManager.userLogin(txtAccount.Text, txtPassword.Text);
+                UserLoginManager QWE = new UserLoginManager();
+                UserLogin userLogin = QWE.userLogin(txtAccount.Text, txtPassword.Text);
                 string name = userLogin.UserName;
                 if (userLogin != null)
                 {
