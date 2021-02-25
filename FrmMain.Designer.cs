@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEnter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -50,16 +50,17 @@
             this.txtPassword.Size = new System.Drawing.Size(154, 21);
             this.txtPassword.TabIndex = 0;
             // 
-            // button1
+            // btnEnter
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(190, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnter.BackgroundImage")));
+            this.btnEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEnter.Location = new System.Drawing.Point(190, 306);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(75, 26);
+            this.btnEnter.TabIndex = 1;
+            this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
             // label1
             // 
@@ -94,7 +95,7 @@
             this.ClientSize = new System.Drawing.Size(909, 482);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtAccount);
             this.Name = "FrmMain";
@@ -108,7 +109,7 @@
 
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
