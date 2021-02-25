@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace HotelClient
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
-        public Form1()
+        public FrmMain()
         {
             InitializeComponent();
+        }
+
+
+        public bool Check()
+        {
+            if ()
+            {
+
+            }
+            return true;
         }
     }
 }
