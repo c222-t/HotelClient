@@ -17,12 +17,38 @@ namespace HotelClient
             InitializeComponent();
         }
 
-
+        private void BtnEnter_Click(object sender, EventArgs e)
+        {
+            if (Check())
+            {
+                UserLogin userLogin = userLoginManager.userLogin(txtAccount.Text, txtPassword.Text);
+                string name = userLogin.UserName;
+                if (userLogin != null)
+                {
+                    FrmMenu menu = new FrmMenu();
+                    menu.Name = name;
+                    menu.RoomNumber = txtAccount.Text;
+                    menu.IDCard = txtPassword.Text;
+                    menu.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("登录失败，账号或密码错误!!");
+                }
+            }
+        }
         public bool Check()
         {
-            if ()
+            if (txtAccount.Text == "")
             {
-
+                MessageBox.Show("请输入账号！！");
+                return false;
+            }
+            else if(txtPassword.Text == "")
+            {
+                MessageBox.Show("请输入密码！！");
+                return false;
             }
             return true;
         }
