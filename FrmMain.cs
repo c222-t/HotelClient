@@ -23,7 +23,7 @@ namespace HotelClient
         private void BtnEnter_Click(object sender, EventArgs e)
         {
             if (Check())
-            {
+            { 
                 UserLoginManager QWE = new UserLoginManager();
                 UserLogin userLogin = QWE.userLogin(txtAccount.Text, txtPassword.Text);
                 string name = userLogin.UserName;
