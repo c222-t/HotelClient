@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelModel;
+using HotelBLL;
 
 namespace HotelClient
 {
     public partial class FrmReportForm : Form
     {
-        public string roomNumber;
-        public string IDCard;
-        public string TotalConsumption;
-        public string money;
-        public string SpendingTime;
-        public string Describe;
+        ReportBusinessLayerManager report = new ReportBusinessLayerManager();
+
+        public string IDCard1;
         public FrmReportForm()
         {
             InitializeComponent();
@@ -25,12 +24,13 @@ namespace HotelClient
 
         private void FrmReportForm_Load(object sender, EventArgs e)
         {
-            lblroomNumber.Text = roomNumber;
-            lblIDCard.Text = IDCard;
-            lblDescribe.Text = Describe;
-            lblSpendingTime.Text = SpendingTime;
-            lblTotalConsumption.Text = TotalConsumption;
-            lblmoney.Text = money;
+            List<StatementOfAccount> ofAccounts = report.Soa(IDCard1);
+            dataGridView1.DataSource = ofAccounts;
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

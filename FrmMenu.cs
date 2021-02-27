@@ -45,16 +45,8 @@ namespace HotelClient
 
         private void PictureBox4_Click(object sender, EventArgs e)
         {
-            ReportBusinessLayerManager report = new ReportBusinessLayerManager();
-            StatementOfAccount statement = report.Soa(IDCard);
             FrmReportForm frm = new FrmReportForm();
-
-            frm.roomNumber = statement.RoomNumber;
-            frm.IDCard = statement.IDCard;
-            frm.money = statement.money;
-            frm.Describe = statement.Describe;
-            frm.SpendingTime = statement.SpendingTime;
-            frm.TotalConsumption = statement.TotalConsumption;
+            frm.IDCard1 = IDCard;
             frm.Show();
         }
     }

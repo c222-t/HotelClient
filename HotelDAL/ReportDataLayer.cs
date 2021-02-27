@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HotelModel;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace HotelDAL
 {
@@ -12,32 +13,33 @@ namespace HotelDAL
     {
         DBHelper DB = new DBHelper();
 
-        public StatementOfAccount statement(string idCard)
+        public List<StatementOfAccount> statement(string idCard)
         {
-            StatementOfAccount statement = null;
+            List<StatementOfAccount> ofAccounts = new List<StatementOfAccount>();
 
-            string sql = "select s.RoomNumber ,PaymentMethod ,c.IDCard ,Describe,money,SpendingTime,s.TotalConsumption from ConsumptionRecord c join StatementTable s on s.IDCard = c.IDCard where c.IDCard=@IDCard";
+            string sql = "select UserName ,s.RoomNumber,PaymentMethod ,Describe,money,SpendingTime,s.TotalConsumption from ConsumptionRecord c join StatementTable s on s.IDCard = c.IDCard join UserTable u on u.IDCard = c.IDCard where c.IDCard = @idCard ";
 
             SqlParameter[] sp =
             {
-                new SqlParameter("@IDCard",idCard)
+                new SqlParameter("@idCard",idCard)
             };
+            DataTable dt = DB.GetTable(sql, "ConsumptionRecord", sp);
 
-            SqlDataReader dr = DB.ExecuteReader(sql, sp);
-
-            if (dr.Read())
+            foreach (DataRow dr in dt.Rows)
             {
-                statement = new StatementOfAccount
+                StatementOfAccount lx = new StatementOfAccount
                 {
+                    Name = dr["UserName"].ToString(),
                     RoomNumber = dr["RoomNumber"].ToString(),
-                    IDCard = dr["IDCard"].ToString(),
+                    PaymentMethod = dr["PaymentMethod"].ToString(),
                     TotalConsumption = dr["TotalConsumption"].ToString(),
                     money = dr["money"].ToString(),
                     SpendingTime = dr["SpendingTime"].ToString(),
                     Describe = dr["Describe"].ToString()
                 };
+                ofAccounts.Add(lx);
             }
-            return statement;
+            return ofAccounts;
         }
     }
 }

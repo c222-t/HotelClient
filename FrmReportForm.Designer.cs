@@ -28,167 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblroomNumber = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblIDCard = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblmoney = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblSpendingTime = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblDescribe = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblTotalConsumption = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "房间号";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column7,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(765, 393);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // lblroomNumber
+            // Column1
             // 
-            this.lblroomNumber.AutoSize = true;
-            this.lblroomNumber.Location = new System.Drawing.Point(48, 57);
-            this.lblroomNumber.Name = "lblroomNumber";
-            this.lblroomNumber.Size = new System.Drawing.Size(41, 12);
-            this.lblroomNumber.TabIndex = 1;
-            this.lblroomNumber.Text = "label2";
+            this.Column1.DataPropertyName = "Name";
+            this.Column1.HeaderText = "姓名";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // label3
+            // Column7
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "身份证";
+            this.Column7.DataPropertyName = "Describe";
+            this.Column7.HeaderText = "消费描述";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
-            // lblIDCard
+            // Column2
             // 
-            this.lblIDCard.AutoSize = true;
-            this.lblIDCard.Location = new System.Drawing.Point(160, 57);
-            this.lblIDCard.Name = "lblIDCard";
-            this.lblIDCard.Size = new System.Drawing.Size(41, 12);
-            this.lblIDCard.TabIndex = 1;
-            this.lblIDCard.Text = "label2";
+            this.Column2.DataPropertyName = "RoomNumber";
+            this.Column2.HeaderText = "房间号";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // label5
+            // Column3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "金额";
+            this.Column3.DataPropertyName = "PaymentMethod";
+            this.Column3.HeaderText = "支付方式";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // lblmoney
+            // Column4
             // 
-            this.lblmoney.AccessibleDescription = "";
-            this.lblmoney.AutoSize = true;
-            this.lblmoney.Location = new System.Drawing.Point(48, 126);
-            this.lblmoney.Name = "lblmoney";
-            this.lblmoney.Size = new System.Drawing.Size(41, 12);
-            this.lblmoney.TabIndex = 1;
-            this.lblmoney.Text = "label2";
+            this.Column4.DataPropertyName = "money";
+            this.Column4.HeaderText = "金额";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
-            // label7
+            // Column5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(160, 100);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "消费时间";
+            this.Column5.DataPropertyName = "SpendingTime";
+            this.Column5.HeaderText = "结账时间";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
-            // lblSpendingTime
+            // Column6
             // 
-            this.lblSpendingTime.AutoSize = true;
-            this.lblSpendingTime.Location = new System.Drawing.Point(160, 126);
-            this.lblSpendingTime.Name = "lblSpendingTime";
-            this.lblSpendingTime.Size = new System.Drawing.Size(41, 12);
-            this.lblSpendingTime.TabIndex = 1;
-            this.lblSpendingTime.Text = "label2";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 168);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "商品描述";
-            // 
-            // lblDescribe
-            // 
-            this.lblDescribe.AutoSize = true;
-            this.lblDescribe.Location = new System.Drawing.Point(48, 194);
-            this.lblDescribe.Name = "lblDescribe";
-            this.lblDescribe.Size = new System.Drawing.Size(41, 12);
-            this.lblDescribe.TabIndex = 1;
-            this.lblDescribe.Text = "label2";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(160, 168);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 12);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "总消费";
-            // 
-            // lblTotalConsumption
-            // 
-            this.lblTotalConsumption.AutoSize = true;
-            this.lblTotalConsumption.Location = new System.Drawing.Point(160, 194);
-            this.lblTotalConsumption.Name = "lblTotalConsumption";
-            this.lblTotalConsumption.Size = new System.Drawing.Size(41, 12);
-            this.lblTotalConsumption.TabIndex = 1;
-            this.lblTotalConsumption.Text = "label2";
+            this.Column6.DataPropertyName = "TotalConsumption";
+            this.Column6.HeaderText = "总消费";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // FrmReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 400);
-            this.Controls.Add(this.lblTotalConsumption);
-            this.Controls.Add(this.lblDescribe);
-            this.Controls.Add(this.lblSpendingTime);
-            this.Controls.Add(this.lblmoney);
-            this.Controls.Add(this.lblIDCard);
-            this.Controls.Add(this.lblroomNumber);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(772, 408);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "FrmReportForm";
             this.Text = "报表中心";
             this.Load += new System.EventHandler(this.FrmReportForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblroomNumber;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblIDCard;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblmoney;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblSpendingTime;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblDescribe;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblTotalConsumption;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

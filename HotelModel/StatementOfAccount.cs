@@ -9,14 +9,18 @@ namespace HotelModel
     public class StatementOfAccount
     {
         /// <summary>
-        /// 房间编号
+        /// 姓名
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// 房间号
         /// </summary>
         public string RoomNumber { get; set; }
 
         /// <summary>
-        /// 身份证
+        /// 支付方式
         /// </summary>
-        public string IDCard { get; set; }
+        public string PaymentMethod { get; set; }
 
         /// <summary>
         /// 总消费

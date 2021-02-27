@@ -12,7 +12,7 @@ namespace HotelBLL
     {
         private ReportDataLayer rdl = new ReportDataLayer();
 
-        public StatementOfAccount Soa(string idCard)
+        public List<StatementOfAccount> Soa(string idCard)
         {
             return rdl.statement(idCard);
         }
