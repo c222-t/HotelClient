@@ -11,6 +11,7 @@ using HotelBLL;
 using HotelModel;
 using HotelRegulator;
 
+
 namespace HotelClient
 {
     public partial class FrmMain : Form
