@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelBLL;
 using HotelModel;
-
+using HotelRegulator;
 
 namespace HotelClient
 {
@@ -55,6 +55,11 @@ namespace HotelClient
                 return false;
             }
             return true;
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            Win32.AnimateWindow(this.Handle, 300, Win32.AW_HOR_POSITIVE);
         }
     }
 }

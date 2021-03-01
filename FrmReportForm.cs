@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelModel;
 using HotelBLL;
+using HotelRegulator;
 
 namespace HotelClient
 {
@@ -24,6 +25,7 @@ namespace HotelClient
 
         private void FrmReportForm_Load(object sender, EventArgs e)
         {
+            Win32.AnimateWindow(this.Handle, 300, Win32.AW_HOR_POSITIVE);
             List<StatementOfAccount> ofAccounts = report.Soa(IDCard1);
             dataGridView1.DataSource = ofAccounts;
         }

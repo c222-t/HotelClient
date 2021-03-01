@@ -27,5 +27,10 @@ namespace HotelModel
         /// 房间楼层名称
         /// </summary>
         public string Floor { get; set; }
+
+        /// <summary>
+        /// 价格
+        /// </summary>
+        public string Price { get; set; }
     }
 }

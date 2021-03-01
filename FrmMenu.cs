@@ -49,5 +49,11 @@ namespace HotelClient
             frm.IDCard1 = IDCard;
             frm.Show();
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            FrmRoomManagement frmRoom = new FrmRoomManagement();
+            frmRoom.Show();
+        }
     }
 }

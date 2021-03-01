@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 450);
+            this.ClientSize = new System.Drawing.Size(314, 381);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -124,6 +124,7 @@
             this.Controls.Add(this.lblRoomStatus);
             this.Controls.Add(this.lblRoomNumber);
             this.Name = "FrmState";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmState";
             this.Load += new System.EventHandler(this.FrmState_Load);
             this.ResumeLayout(false);
