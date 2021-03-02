@@ -100,7 +100,7 @@
             this.Controls.Add(this.txtAccount);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "登录界面";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

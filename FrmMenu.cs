@@ -55,5 +55,11 @@ namespace HotelClient
             FrmRoomManagement frmRoom = new FrmRoomManagement();
             frmRoom.Show();
         }
+
+        private void XXXXX_Click(object sender, EventArgs e)
+        {
+            FrmHotelServices frm = new FrmHotelServices();
+            frm.Show();
+        }
     }
 }

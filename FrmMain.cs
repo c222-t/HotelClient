@@ -27,9 +27,10 @@ namespace HotelClient
             { 
                 UserLoginManager QWE = new UserLoginManager();
                 UserLogin userLogin = QWE.userLogin(txtAccount.Text, txtPassword.Text);
-                string name = userLogin.UserName;
+                
                 if (userLogin != null)
                 {
+                    string name = userLogin.UserName;
                     FrmMenu menu = new FrmMenu();
                     menu.Name = name;
                     menu.RoomNumber = txtAccount.Text;

@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="ClRoomStatusDataLayer.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="HotelServiceDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseDataLayer.cs" />
     <Compile Include="ReportDataLayer.cs" />
     <Compile Include="RoomManagementDataLayer.cs" />
     <Compile Include="UserLoginService.cs" />

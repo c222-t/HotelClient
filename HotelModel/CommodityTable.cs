@@ -10,10 +10,7 @@ namespace HotelModel
  /// </summary>
     public class CommodityTable
     {
-        /// <summary>
-        /// 商品编号
-        /// </summary>
-        public int Number { get; set; }
+       
         /// <summary>
         /// 商品名称
         /// </summary>
@@ -22,18 +19,7 @@ namespace HotelModel
         /// 商品单位
         /// </summary>
         public string CommodityUnit { get; set; }
-        /// <summary>
-        /// 商品数量
-        /// </summary>
-        public int Quantity { get; set; }
-        /// <summary>
-        /// 商品类型
-        /// </summary>
-        public CommodityTypeTable Type { get; set; }
-        /// <summary>
-        /// 商品进价
-        /// </summary>
-        public double PurchasePice { get; set; }
+       
         /// <summary>
         /// 商品零售
         /// </summary>

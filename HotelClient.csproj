@@ -58,17 +58,35 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPayment.Designer.cs">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmReportForm.Designer.cs">
       <DependentUpon>FrmReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShoppingCartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShoppingCartForm.Designer.cs">
+      <DependentUpon>FrmShoppingCartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmState.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmState.Designer.cs">
       <DependentUpon>FrmState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHotelServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHotelServices.Designer.cs">
+      <DependentUpon>FrmHotelServices.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,17 +97,26 @@
       <DependentUpon>FrmRoomManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32.cs" />
+    <EmbeddedResource Include="FrmHotelServices.resx">
+      <DependentUpon>FrmHotelServices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPayment.resx">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReportForm.resx">
       <DependentUpon>FrmReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRoomManagement.resx">
       <DependentUpon>FrmRoomManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShoppingCartForm.resx">
+      <DependentUpon>FrmShoppingCartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmState.resx">
       <DependentUpon>FrmState.cs</DependentUpon>

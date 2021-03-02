@@ -55,6 +55,7 @@
             this.XXXXX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.XXXXX.TabIndex = 0;
             this.XXXXX.TabStop = false;
+            this.XXXXX.Click += new System.EventHandler(this.XXXXX_Click);
             // 
             // label1
             // 
