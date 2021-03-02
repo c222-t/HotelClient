@@ -15,6 +15,7 @@ namespace HotelClient
         public string yuan;
         public string jin;
         int a;
+        int b;
         
         public FrmPayment()
         {
@@ -36,7 +37,8 @@ namespace HotelClient
             //FrmHotelServices frm = new FrmHotelServices();
             this.textBox1.Text = yuan;
             a =int.Parse(textBox2.Text);
-            //textBox3.Text = (jin * a).ToString();
+            b = int.Parse(jin);
+            textBox3.Text = (b * a).ToString();
         }
     }
 }
