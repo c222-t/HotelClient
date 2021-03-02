@@ -13,7 +13,7 @@ namespace HotelClient
     public partial class FrmPayment : Form
     {
         public string yuan;
-        public int jin;
+        public string jin;
         int a;
         
         public FrmPayment()
@@ -36,7 +36,7 @@ namespace HotelClient
             //FrmHotelServices frm = new FrmHotelServices();
             this.textBox1.Text = yuan;
             a =int.Parse(textBox2.Text);
-            textBox3.Text = (jin * a).ToString();
+            //textBox3.Text = (jin * a).ToString();
         }
     }
 }

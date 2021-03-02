@@ -17,7 +17,7 @@ namespace HotelClient
     {
         public DataTable Data;
         public string name;
-        public int jin;
+        public string jin;
         HotelServiceBusinessLayer hotel = new HotelServiceBusinessLayer();
         public FrmHotelServices()
         {
@@ -56,7 +56,7 @@ namespace HotelClient
             FrmPayment fp = new FrmPayment();
             name = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             fp.yuan = name;
-            jin = (int)this.dataGridView1.SelectedRows[0].Cells[1].Value;
+            jin = this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             fp.jin = jin;
             fp.Show();
         }
