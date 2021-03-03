@@ -37,6 +37,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +52,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
             this.Column1,
             this.Column2,
             this.Column3});
@@ -96,7 +98,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 76);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 57);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -116,6 +118,29 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(44, 17);
             this.toolStripLabel1.Text = "购物车";
             this.toolStripLabel1.Click += new System.EventHandler(this.ToolStripLabel1_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "u=92977151,3458609782&fm=26&gp=0 - 副本.jpg");
+            this.imageList1.Images.SetKeyName(1, "u=3105412470,1491743872&fm=26&gp=0.jpg");
+            this.imageList1.Images.SetKeyName(2, "u=3683050476,1843729886&fm=26&gp=0.jpg");
+            this.imageList1.Images.SetKeyName(3, "u=3938038684,1311601517&fm=26&gp=0.jpg");
+            this.imageList1.Images.SetKeyName(4, "u=1191041514,2212293832&fm=26&gp=0 - 副本.jpg");
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column4.Frozen = true;
+            this.Column4.HeaderText = "图片";
+            this.Column4.Image = ((System.Drawing.Image)(resources.GetObject("Column4.Image")));
+            this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column4.Width = 189;
             // 
             // Column1
             // 
@@ -166,6 +191,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

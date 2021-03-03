@@ -27,12 +27,10 @@ namespace HotelClient
 
         private void FrmShoppingCartForm_Load(object sender, EventArgs e)
         {
-            /*FrmHotelServices frmHotel = new FrmHotelServices();
-            this.textBox1.Text = frmHotel.Data;*/
-            /*FrmHotelServices frmHotel = new FrmHotelServices();
-            
-            yuan = frmHotel.Data.Copy();
-            this.dataGridView1.DataSource = yuan;*/
+            dataGridView1.DataSource = Info.tables;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(224, 224, 224);//设置背景色
+            //dataGridView1.ClearSelection();
+            // dataGridView1.Enabled = false;
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

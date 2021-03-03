@@ -9,7 +9,7 @@ namespace HotelClient
 {
     public static class Info
     {
-        public static List<CommodityTable> tables;
+        public static List<CommodityTable> tables= new List<CommodityTable>();
 
     }
 }

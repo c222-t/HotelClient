@@ -35,6 +35,7 @@ namespace HotelClient
         private void FrmHotelServices_Load(object sender, EventArgs e)
         {
             List<CommodityTable> tables = hotel.tables();
+            //dataGridView1.SelectedRows[0].Cells[0].Value = imageList1.Images[0];
             dataGridView1.DataSource = tables;
         }
 
@@ -51,12 +52,18 @@ namespace HotelClient
 
         private void 加入购物车ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString()+"?","购物车提示",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString().Trim()+"?","购物车提示",MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                
+                CommodityTable commodityTable = new CommodityTable()
+                {
+                    PicturePath = "",
+                    CommodityName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString().Trim(),
+                    CommodityUnit = dataGridView1.SelectedRows[0].Cells[2].Value.ToString().Trim(),
+                    Retail = (double) dataGridView1.SelectedRows[0].Cells[3].Value
+                };
+                Info.tables.Add(commodityTable);
 
-               // Data = dataGridView1.DataSource.ToString();
             }
         }
 
