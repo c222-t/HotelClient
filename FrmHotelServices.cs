@@ -36,18 +36,19 @@ namespace HotelClient
             frmHotel.Show();
         }
 
-        private void ToolStripLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void 加入购物车ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString()+"?","购物车提示",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString()+"?","购物车提示",MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Data= (DataTable)this.dataGridView1.DataSource;
-               // Data = dataGridView1.DataSource.ToString();
+                CommodityTable commodityTable = new CommodityTable()
+                {
+                    PicturePath = dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),//图片
+                    CommodityName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),//商品名称
+                    CommodityUnit = dataGridView1.SelectedRows[0].Cells[2].Value.ToString(),
+                    Retail= (double)dataGridView1.SelectedRows[0].Cells[3].Value
+                };
+                Info.tables.Add(commodityTable);
             }
         }
 

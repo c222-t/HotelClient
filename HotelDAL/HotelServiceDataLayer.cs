@@ -11,7 +11,6 @@ namespace HotelDAL
     public class HotelServiceDataLayer
     {
         DBHelper DB = new DBHelper();
-
         public List<CommodityTable> tables()
         {
             List<CommodityTable> ct = new List<CommodityTable>();

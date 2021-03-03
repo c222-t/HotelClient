@@ -13,7 +13,6 @@ namespace HotelClient
 {
     public partial class FrmShoppingCartForm : Form
     {
-        public DataTable yuan;
         public FrmShoppingCartForm()
         {
             InitializeComponent();
@@ -21,17 +20,7 @@ namespace HotelClient
 
         private void FrmShoppingCartForm_Load(object sender, EventArgs e)
         {
-            /*FrmHotelServices frmHotel = new FrmHotelServices();
-            this.textBox1.Text = frmHotel.Data;*/
-            FrmHotelServices frmHotel = new FrmHotelServices();
-            
-            yuan = frmHotel.Data.Copy();
-            this.dataGridView1.DataSource = yuan;
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dataGridView1.DataSource = Info.tables;
         }
     }
 }

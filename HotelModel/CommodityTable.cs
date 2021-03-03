@@ -10,11 +10,14 @@ namespace HotelModel
  /// </summary>
     public class CommodityTable
     {
-       
         /// <summary>
-        /// 商品名称
+        /// 图片路径
         /// </summary>
-        public string CommodityName { get; set; }
+        public string PicturePath{ get; set; }
+    /// <summary>
+    /// 商品名称
+    /// </summary>
+       public string CommodityName { get; set; }
         /// <summary>
         /// 商品单位
         /// </summary>
