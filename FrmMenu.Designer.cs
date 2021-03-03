@@ -91,7 +91,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "房间管理";
+            this.label2.Text = "消息提醒";
             // 
             // PbState
             // 

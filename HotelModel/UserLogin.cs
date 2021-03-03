@@ -23,6 +23,10 @@ namespace HotelModel
         /// 用户姓名
         /// </summary>
         string userName;
+        /// <summary>
+        /// 天数
+        /// </summary>
+        public int Days { get; set; }
 
         public string RoomNumber { get => roomNumber; set => roomNumber = value; }
         public string IDNumber { get => iDNumber; set => iDNumber = value; }

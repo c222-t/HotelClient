@@ -15,9 +15,17 @@ namespace HotelClient
 {
     public partial class FrmHotelServices : Form
     {
+
         public DataTable Data;
         public string name;
         public string jin;
+
+
+        public string mingchen;
+        public string danwei;
+        public string jine;
+
+
         HotelServiceBusinessLayer hotel = new HotelServiceBusinessLayer();
         public FrmHotelServices()
         {
@@ -36,19 +44,19 @@ namespace HotelClient
             frmHotel.Show();
         }
 
+        private void ToolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void 加入购物车ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString()+"?","购物车提示",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString()+"?","购物车提示",MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                CommodityTable commodityTable = new CommodityTable()
-                {
-                    PicturePath = dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),//图片
-                    CommodityName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),//商品名称
-                    CommodityUnit = dataGridView1.SelectedRows[0].Cells[2].Value.ToString(),
-                    Retail= (double)dataGridView1.SelectedRows[0].Cells[3].Value
-                };
-                Info.tables.Add(commodityTable);
+                
+
+               // Data = dataGridView1.DataSource.ToString();
             }
         }
 
@@ -57,7 +65,7 @@ namespace HotelClient
             FrmPayment fp = new FrmPayment();
             name = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             fp.yuan = name;
-            jin = this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            jin = this.dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             fp.jin = jin;
             fp.Show();
         }

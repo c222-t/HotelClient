@@ -21,6 +21,11 @@ namespace HotelClient
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 登录操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEnter_Click(object sender, EventArgs e)
         {
             if (Check())
@@ -31,10 +36,15 @@ namespace HotelClient
                 if (userLogin != null)
                 {
                     string name = userLogin.UserName;
+                    int shu = userLogin.Days;
                     FrmMenu menu = new FrmMenu();
                     menu.Name = name;
                     menu.RoomNumber = txtAccount.Text;
                     menu.IDCard = txtPassword.Text;
+
+                    if (shu < 2)
+                        nfl.ShowBalloonTip(500, "歪嘴大酒店提醒您", "您的房间还有一天到期 请及时续费", ToolTipIcon.Info);
+                    
                     menu.Show();
                     this.Hide();
                 }
@@ -44,6 +54,11 @@ namespace HotelClient
                 }
             }
         }
+
+        /// <summary>
+        /// 判断输入的账号和密码是否为空
+        /// </summary>
+        /// <returns></returns>
         public bool Check()
         {
             if (txtAccount.Text == "")

@@ -52,8 +52,7 @@ namespace HotelClient
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            FrmRoomManagement frmRoom = new FrmRoomManagement();
-            frmRoom.Show();
+            
         }
 
         private void XXXXX_Click(object sender, EventArgs e)

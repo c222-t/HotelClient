@@ -91,12 +91,6 @@
     <Compile Include="Info.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmRoomManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRoomManagement.Designer.cs">
-      <DependentUpon>FrmRoomManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Win32.cs" />
     <EmbeddedResource Include="FrmHotelServices.resx">
       <DependentUpon>FrmHotelServices.cs</DependentUpon>
@@ -112,9 +106,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportForm.resx">
       <DependentUpon>FrmReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRoomManagement.resx">
-      <DependentUpon>FrmRoomManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShoppingCartForm.resx">
       <DependentUpon>FrmShoppingCartForm.cs</DependentUpon>
@@ -153,6 +144,9 @@
       <Project>{4db3b332-a8ab-4361-9ad9-805fbbf80eb1}</Project>
       <Name>HotelModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="图片\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
