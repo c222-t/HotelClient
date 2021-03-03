@@ -15,7 +15,6 @@ namespace HotelClient
         public string yuan;
         public string jin;
         int a;
-
         public FrmPayment()
         {
             InitializeComponent();
