@@ -15,6 +15,7 @@ namespace HotelClient
 {
     public partial class FrmHotelServices : Form
     {
+
         public DataTable Data;
         public string name;
         public string jin;
