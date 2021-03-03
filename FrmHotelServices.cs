@@ -19,6 +19,7 @@ namespace HotelClient
         public string name;
         public string jin;
 
+
         public string mingchen;
         public string danwei;
         public string jine;
