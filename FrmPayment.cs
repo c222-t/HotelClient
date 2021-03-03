@@ -48,6 +48,7 @@ namespace HotelClient
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
             a = int.Parse(shuliang.Text);
             int b = int.Parse(jin);
             (b * a).ToString();
