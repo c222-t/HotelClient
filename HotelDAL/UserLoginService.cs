@@ -19,7 +19,7 @@ namespace HotelDAL
         { 
             UserLogin userLogin = null; 
 
-            string sql = "select S.IDCard,S.RoomNumber,UserName from StatementTable S join UserTable U on S.IDCard= U.IDCard where U.IDCard = @IDCard and S.RoomNumber = @RoomNumber";
+            string sql = "select S.IDCard,S.RoomNumber,UserName,S.Days from StatementTable S join UserTable U on S.IDCard= U.IDCard where U.IDCard = @IDCard and S.RoomNumber = @RoomNumber";
             SqlParameter[] sp =
             {
                 new SqlParameter("@IDCard",iDNumber),//用户身份证
@@ -32,7 +32,8 @@ namespace HotelDAL
                 {
                     RoomNumber = roomNumber,
                     IDNumber = iDNumber,
-                    UserName = sdr["UserName"].ToString().Trim()
+                    UserName = sdr["UserName"].ToString().Trim(),
+                    Days = (int)sdr["Days"]
                 };
             };
             sdr.Close();

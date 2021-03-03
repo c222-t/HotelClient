@@ -14,6 +14,12 @@ namespace HotelClient
     public partial class FrmShoppingCartForm : Form
     {
         public DataTable yuan;
+
+
+        public string mingchen;
+        public string danwei;
+        public string jine;
+
         public FrmShoppingCartForm()
         {
             InitializeComponent();
@@ -23,10 +29,10 @@ namespace HotelClient
         {
             /*FrmHotelServices frmHotel = new FrmHotelServices();
             this.textBox1.Text = frmHotel.Data;*/
-            FrmHotelServices frmHotel = new FrmHotelServices();
+            /*FrmHotelServices frmHotel = new FrmHotelServices();
             
             yuan = frmHotel.Data.Copy();
-            this.dataGridView1.DataSource = yuan;
+            this.dataGridView1.DataSource = yuan;*/
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

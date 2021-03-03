@@ -39,5 +39,7 @@ namespace HotelModel
         /// 会员等级
         /// </summary>
         public MembershipTable Member { get; set; }
+
+        
     }
 }

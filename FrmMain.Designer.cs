@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.nfl = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // txtAccount
@@ -86,6 +88,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "密码";
             // 
+            // nfl
+            // 
+            this.nfl.Icon = ((System.Drawing.Icon)(resources.GetObject("nfl.Icon")));
+            this.nfl.Text = "notifyIcon1";
+            this.nfl.Visible = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -114,6 +122,7 @@
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NotifyIcon nfl;
     }
 }
 

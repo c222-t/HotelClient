@@ -18,6 +18,12 @@ namespace HotelClient
         public DataTable Data;
         public string name;
         public string jin;
+
+        public string mingchen;
+        public string danwei;
+        public string jine;
+
+
         HotelServiceBusinessLayer hotel = new HotelServiceBusinessLayer();
         public FrmHotelServices()
         {
@@ -46,7 +52,8 @@ namespace HotelClient
             DialogResult result = MessageBox.Show("是否加入购物车"+this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString()+"?","购物车提示",MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Data= (DataTable)this.dataGridView1.DataSource;
+                
+
                // Data = dataGridView1.DataSource.ToString();
             }
         }
@@ -56,7 +63,7 @@ namespace HotelClient
             FrmPayment fp = new FrmPayment();
             name = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             fp.yuan = name;
-            jin = this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            jin = this.dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             fp.jin = jin;
             fp.Show();
         }
