@@ -37,17 +37,17 @@ namespace HotelClient
             List<CommodityTable> tables = hotel.tables();
             //dataGridView1.SelectedRows[0].Cells[0].Value = imageList1.Images[0];
             dataGridView1.DataSource = tables;
+            dataGridView1.ClearSelection();
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Check();
         }
-
-        private void ToolStripButton1_Click(object sender, EventArgs e)
+        public void Check()
         {
-            FrmShoppingCartForm frmHotel = new FrmShoppingCartForm();
-            frmHotel.Show();
-        }
-
-        private void ToolStripLabel1_Click(object sender, EventArgs e)
-        {
-
+            dataGridView1.Rows[0].Cells[0].Value = imageList1.Images[0];
+            dataGridView1.Rows[1].Cells[0].Value = imageList1.Images[1];
+            dataGridView1.Rows[2].Cells[0].Value = imageList1.Images[2];
+            dataGridView1.Rows[3].Cells[0].Value = imageList1.Images[3];
+            dataGridView1.Rows[4].Cells[0].Value = imageList1.Images[4];
         }
 
         private void 加入购物车ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace HotelClient
             {
                 CommodityTable commodityTable = new CommodityTable()
                 {
-                    PicturePath = "",
+                    PicturePath = "1",
                     CommodityName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString().Trim(),
                     CommodityUnit = dataGridView1.SelectedRows[0].Cells[2].Value.ToString().Trim(),
                     Retail = (double) dataGridView1.SelectedRows[0].Cells[3].Value
@@ -75,6 +75,12 @@ namespace HotelClient
             jin = this.dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             fp.jin = jin;
             fp.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FrmShoppingCartForm frmHotel = new FrmShoppingCartForm();
+            frmHotel.Show();
         }
     }
 }
