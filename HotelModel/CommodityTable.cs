@@ -10,10 +10,6 @@ namespace HotelModel
  /// </summary>
     public class CommodityTable
     {
-        /// <summary>
-        /// 图片路径
-        /// </summary>
-        public string PicturePath{ get; set; }
     /// <summary>
     /// 商品名称
     /// </summary>
@@ -27,6 +23,10 @@ namespace HotelModel
         /// 商品零售
         /// </summary>
         public double Retail { get; set; }
+        /// <summary>
+        /// 图片路径
+        /// </summary>
+        public string PicturePath { get; set; }
     }
 }
 

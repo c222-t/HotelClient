@@ -29,10 +29,5 @@ namespace HotelClient
             List<StatementOfAccount> ofAccounts = report.Soa(IDCard1);
             dataGridView1.DataSource = ofAccounts;
         }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
     }
 }

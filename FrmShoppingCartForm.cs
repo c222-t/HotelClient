@@ -13,13 +13,8 @@ namespace HotelClient
 {
     public partial class FrmShoppingCartForm : Form
     {
-        public DataTable yuan;
-
-
-        public string mingchen;
-        public string danwei;
-        public string jine;
-
+        public string Id;
+        int cishu = 0;
         public FrmShoppingCartForm()
         {
             InitializeComponent();
@@ -32,10 +27,25 @@ namespace HotelClient
             //dataGridView1.ClearSelection();
             // dataGridView1.Enabled = false;
         }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-
+            if (cishu<1)
+            {
+                string i = Id;
+                double a;
+                double b = 0;
+                foreach (var item in Info.tables)
+                {
+                    a = (double)item.Retail;
+                    b += a;
+                }
+                MessageBox.Show("总金额" + b + "元,欢迎下次光临", "系统提示");
+                cishu++;
+            }
+            else
+            {
+                MessageBox.Show("您已经结账!!","系统提示");
+            }
         }
     }
 }

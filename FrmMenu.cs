@@ -48,15 +48,10 @@ namespace HotelClient
             frm.IDCard1 = IDCard;
             frm.Show();
         }
-
-        private void PictureBox2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void XXXXX_Click(object sender, EventArgs e)
         {
             FrmHotelServices frm = new FrmHotelServices();
+            frm.Id = IDCard;
             frm.Show();
         }
     }

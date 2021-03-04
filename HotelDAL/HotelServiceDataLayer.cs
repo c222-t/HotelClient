@@ -15,7 +15,7 @@ namespace HotelDAL
         {
             List<CommodityTable> ct = new List<CommodityTable>();
 
-            string sql = "select CommodityName,CommodityUnit,retail from CommodityTable where 1=1";
+            string sql = "select CommodityName,CommodityUnit,retail,[Path] from CommodityTable";
 
             DataTable dt = DB.GetTable(sql);
 
@@ -23,6 +23,7 @@ namespace HotelDAL
             {
                 CommodityTable table = new CommodityTable
                 {
+                    PicturePath = dr["Path"].ToString(),
                     CommodityName = dr["CommodityName"].ToString(),
                     CommodityUnit = dr["CommodityUnit"].ToString(),
                     Retail = (double)dr["retail"]
