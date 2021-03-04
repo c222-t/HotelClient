@@ -45,6 +45,7 @@ namespace HotelClient
             else
             {
                 MessageBox.Show("您已经结账!!","系统提示");
+
             }
         }
     }
