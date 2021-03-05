@@ -10,10 +10,15 @@ namespace HotelModel
  /// </summary>
     public class CommodityTable
     {
-    /// <summary>
-    /// 商品名称
-    /// </summary>
-       public string CommodityName { get; set; }
+        /// <summary>
+        /// 商品编号
+        /// </summary>
+        public string Number { get; set; }
+
+        /// <summary>
+        /// 商品名称
+        /// </summary>
+        public string CommodityName { get; set; }
         /// <summary>
         /// 商品单位
         /// </summary>

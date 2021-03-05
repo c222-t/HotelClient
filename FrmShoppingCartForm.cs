@@ -18,6 +18,7 @@ namespace HotelClient
         public FrmShoppingCartForm()
         {
             InitializeComponent();
+            this.ControlBox = false;
         }
 
         private void FrmShoppingCartForm_Load(object sender, EventArgs e)
@@ -39,14 +40,22 @@ namespace HotelClient
                     a = (double)item.Retail;
                     b += a;
                 }
+                string sql = "insert into TrolleyTable(IDCard, Number, Quantity)values('431122200202021234','1','1')";
                 MessageBox.Show("总金额" + b + "元,欢迎下次光临", "系统提示");
                 cishu++;
+                nfl.ShowBalloonTip(500, "歪嘴大酒店提醒您", "您的商品歪嘴服务员正在送来的路上请稍等", ToolTipIcon.Info);
+
             }
             else
             {
                 MessageBox.Show("您已经结账!!","系统提示");
 
             }
+        }
+
+        private void BtnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

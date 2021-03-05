@@ -44,7 +44,6 @@
     <Compile Include="HotelServiceBusinessLayer.cs" />
     <Compile Include="ReportBusinessLayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomManagementBusinessLayer.cs" />
     <Compile Include="RoomStatusBusiness_layer.cs" />
     <Compile Include="UserLoginManager.cs" />
   </ItemGroup>

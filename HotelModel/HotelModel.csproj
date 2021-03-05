@@ -42,16 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommodityTable.cs" />
-    <Compile Include="CommodityTypeTable.cs" />
-    <Compile Include="MembershipTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomSchedules.cs" />
-    <Compile Include="RoomStatus.cs" />
-    <Compile Include="RoomTypeTable.cs" />
     <Compile Include="StatementOfAccount.cs" />
     <Compile Include="UserLogin.cs" />
-    <Compile Include="UserRechargeTable.cs" />
-    <Compile Include="UserTable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

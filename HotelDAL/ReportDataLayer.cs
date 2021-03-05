@@ -13,11 +13,11 @@ namespace HotelDAL
     {
         DBHelper DB = new DBHelper();
 
-        public List<StatementOfAccount> statement(string idCard)
+        public StatementOfAccount statement(string idCard)
         {
-            List<StatementOfAccount> ofAccounts = new List<StatementOfAccount>();
+            StatementOfAccount ofAccounts = null;
 
-            string sql = "select UserName ,s.RoomNumber,PaymentMethod ,Describe,money,SpendingTime,s.TotalConsumption from ConsumptionRecord c join StatementTable s on s.IDCard = c.IDCard join UserTable u on u.IDCard = c.IDCard where c.IDCard = @idCard ";
+            string sql = "select  u.Balance,s.TotalConsumption from StatementTable s join UserTable u on u.IDCard = s.IDCard where s.IDCard = @idCard ";
 
             SqlParameter[] sp =
             {
@@ -27,17 +27,12 @@ namespace HotelDAL
 
             foreach (DataRow dr in dt.Rows)
             {
-                StatementOfAccount lx = new StatementOfAccount
+                ofAccounts = new StatementOfAccount
                 {
-                    Name = dr["UserName"].ToString(),
-                    RoomNumber = dr["RoomNumber"].ToString(),
-                    PaymentMethod = dr["PaymentMethod"].ToString(),
-                    TotalConsumption = dr["TotalConsumption"].ToString(),
-                    money = dr["money"].ToString(),
-                    SpendingTime = dr["SpendingTime"].ToString(),
-                    Describe = dr["Describe"].ToString()
+                    TotalConsumption = dr["TotalConsumption"].ToString(),//总消费
+                    money = dr["Balance"].ToString()//余额
                 };
-                ofAccounts.Add(lx);
+
             }
             return ofAccounts;
         }

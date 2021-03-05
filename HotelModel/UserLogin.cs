@@ -32,8 +32,4 @@ namespace HotelModel
         public string IDNumber { get => iDNumber; set => iDNumber = value; }
         public string UserName { get => userName; set => userName = value; }
     }
-
-    public class userLoginManager
-    {
-    }
 }

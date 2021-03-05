@@ -106,6 +106,9 @@
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtAccount);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录界面";
