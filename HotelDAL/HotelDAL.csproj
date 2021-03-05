@@ -46,6 +46,7 @@
     <Compile Include="HotelServiceDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportDataLayer.cs" />
+    <Compile Include="RestaurantDataLayer.cs" />
     <Compile Include="UserLoginService.cs" />
   </ItemGroup>
   <ItemGroup>

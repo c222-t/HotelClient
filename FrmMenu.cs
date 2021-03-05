@@ -22,16 +22,20 @@ namespace HotelClient
         {
             InitializeComponent();
         }
-
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             lblName.Text = "欢迎" + Name + "光临";
             Win32.AnimateWindow(this.Handle, 300, Win32.AW_HOR_POSITIVE);
             State();
             Check();
+            ChanTing();
             textBox2.Text = "正在获取当前位置天气信息............";
-            Weather();
+           // Weather();
         }
+
+        /// <summary>
+        /// 商品
+        /// </summary>
         public void Check()
         {
             HotelServiceBusinessLayer hotel = new HotelServiceBusinessLayer();
@@ -45,6 +49,24 @@ namespace HotelClient
             dataGridView1.ClearSelection();
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
+
+        /// <summary>
+        /// 餐厅
+        /// </summary>
+        public void ChanTing()
+        {
+            RestaurantBusinessLayer layer = new RestaurantBusinessLayer();
+            List<RestaurantPhysicalLayer> layers = layer.layers();
+            dataGridView2.DataSource = layers;
+            for (int i = 0; i < layers.Count; i++)
+            {
+                imageList2.Images.Add(Image.FromFile(layers[i].Path.Trim()));
+                dataGridView2.Rows[i].Cells[0].Value = imageList2.Images[i];
+            }
+            dataGridView2.ClearSelection();
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
         private void TmAime_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString();
@@ -109,5 +131,7 @@ namespace HotelClient
         {
             Weather();
         }
+
+      
     }
 }
