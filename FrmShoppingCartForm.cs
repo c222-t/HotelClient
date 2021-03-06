@@ -67,7 +67,7 @@ namespace HotelClient
                 str += dataGridView1.Rows[i].Cells[1].Value.ToString().Trim()+",";
             }
             //通过UTF8编码转换成8位无符号整数，字节数组
-            str = str.Substring(0,str.Length -1);
+            str = Info.RoomId.Trim()+"("+ DateTime.Now.ToString()+")："+str.Substring(0,str.Length -1);
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(str);
             //socketSend.Send(buffer);
             //将buffer中的数据发送到Socket

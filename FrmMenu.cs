@@ -28,9 +28,8 @@ namespace HotelClient
             Win32.AnimateWindow(this.Handle, 300, Win32.AW_HOR_POSITIVE);
             State();
             Check();
-            ChanTing();
             textBox2.Text = "正在获取当前位置天气信息............";
-           // Weather();
+            //Weather();
         }
 
         /// <summary>
@@ -58,6 +57,7 @@ namespace HotelClient
             RestaurantBusinessLayer layer = new RestaurantBusinessLayer();
             List<RestaurantPhysicalLayer> layers = layer.layers();
             dataGridView2.DataSource = layers;
+
             for (int i = 0; i < layers.Count; i++)
             {
                 imageList2.Images.Add(Image.FromFile(layers[i].Path.Trim()));
@@ -75,7 +75,7 @@ namespace HotelClient
         {
             cn.com.webxml.www.WeatherWebService w = new cn.com.webxml.www.WeatherWebService();
             string[] s = new string[23];//声明string数组存放返回结果  
-            string city = "深圳";//获得文本框录入的查询城市
+            string city = "永州";//获得文本框录入的查询城市
             s = w.getWeatherbyCityName(city);
             try
             {
@@ -96,7 +96,7 @@ namespace HotelClient
             RoomSchedules roomSchedules = roomStatusBusiness_Layer.rooms(RoomNumber);
             ReportBusinessLayerManager report = new ReportBusinessLayerManager();
             StatementOfAccount ofAccounts = report.Soa(IDCard);
-            
+            Info.RoomId = roomSchedules.RoomNumber;
             lblRoomNumber.Text = roomSchedules.RoomNumber;
             lblRoomStatus.Text = roomSchedules.RoomStatus;
             lblRoomType.Text = roomSchedules.RoomType;
@@ -114,11 +114,39 @@ namespace HotelClient
 
         private void TsmiAddShoppingCart_Click(object sender, EventArgs e)
         {
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                He();
+            }
+            else if (dataGridView1.SelectedRows.Count != 0 )
+            {
+                Hew();
+            }
+        }
+
+        public void He()
+        {
+            DialogResult result = MessageBox.Show("是否加入购物车" + this.dataGridView2.SelectedRows[0].Cells[1].Value.ToString().Trim() + "?", "购物车提示", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                CommodityTable commodityTable = new CommodityTable()
+                {
+
+                    CommodityName = dataGridView2.SelectedRows[0].Cells[1].Value.ToString().Trim(),
+                    // CommodityUnit = dataGridView2.SelectedRows[0].Cells[3].Value.ToString().Trim(),
+                    Retail = (double)dataGridView2.SelectedRows[0].Cells[2].Value
+                };
+                Info.tables.Add(commodityTable);
+            }
+        }
+        public void Hew ()
+        {
             DialogResult result = MessageBox.Show("是否加入购物车" + this.dataGridView1.SelectedRows[0].Cells[1].Value.ToString().Trim() + "?", "购物车提示", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 CommodityTable commodityTable = new CommodityTable()
                 {
+
                     CommodityName = dataGridView1.SelectedRows[0].Cells[2].Value.ToString().Trim(),
                     CommodityUnit = dataGridView1.SelectedRows[0].Cells[3].Value.ToString().Trim(),
                     Retail = (double)dataGridView1.SelectedRows[0].Cells[4].Value
@@ -126,12 +154,21 @@ namespace HotelClient
                 Info.tables.Add(commodityTable);
             }
         }
-
         private void LblWeather_Click(object sender, EventArgs e)
         {
             Weather();
         }
 
-      
+        private void TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                Check();
+            }
+            else if (tabControl1.SelectedIndex == 1)
+            {
+                ChanTing();
+            }
+        }
     }
 }

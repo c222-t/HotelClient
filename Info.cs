@@ -1,14 +1,11 @@
 ﻿using HotelModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelClient
 {
     public static class Info
     {
-        public static List<CommodityTable> tables= new List<CommodityTable>();
+        public static string RoomId = "";
+        public static List<CommodityTable> tables = new List<CommodityTable>();
     }
 }

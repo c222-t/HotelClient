@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.tmAime = new System.Windows.Forms.Timer(this.components);
             this.lblName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,6 +49,10 @@
             this.购买ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.lblTime = new System.Windows.Forms.Label();
@@ -70,10 +75,6 @@
             this.pbWeather2 = new System.Windows.Forms.PictureBox();
             this.lblWeather = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -95,13 +96,13 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblName.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblName.Location = new System.Drawing.Point(7, 22);
+            this.lblName.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblName.Location = new System.Drawing.Point(6, 22);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(108, 21);
+            this.lblName.Size = new System.Drawing.Size(93, 25);
             this.lblName.TabIndex = 16;
-            this.lblName.Text = "|欢迎XXX光临";
+            this.lblName.Text = "|欢迎光临";
             // 
             // label6
             // 
@@ -109,7 +110,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微软雅黑 Light", 10.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(97, 38);
+            this.label6.Location = new System.Drawing.Point(98, 41);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 20;
@@ -118,6 +119,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
             this.groupBox2.Controls.Add(this.btnShoppingCart);
             this.groupBox2.Controls.Add(this.tabControl1);
             this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -148,6 +150,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(735, 486);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl1_Selecting);
             // 
             // tabPage1
             // 
@@ -274,22 +277,62 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView2.ColumnHeadersVisible = false;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 7);
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(714, 440);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(721, 447);
+            this.dataGridView2.TabIndex = 4;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "图片";
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CanteenName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "商品名称";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn3.HeaderText = "商品售价";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Path";
+            this.dataGridViewTextBoxColumn4.HeaderText = "图片路径";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // imageList1
             // 
@@ -334,8 +377,9 @@
             // lblRoomType
             // 
             this.lblRoomType.AutoSize = true;
+            this.lblRoomType.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomType.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomType.Location = new System.Drawing.Point(150, 80);
+            this.lblRoomType.Location = new System.Drawing.Point(145, 80);
             this.lblRoomType.Name = "lblRoomType";
             this.lblRoomType.Size = new System.Drawing.Size(0, 21);
             this.lblRoomType.TabIndex = 23;
@@ -352,8 +396,9 @@
             // lblFloor
             // 
             this.lblFloor.AutoSize = true;
+            this.lblFloor.BackColor = System.Drawing.Color.Transparent;
             this.lblFloor.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblFloor.Location = new System.Drawing.Point(150, 146);
+            this.lblFloor.Location = new System.Drawing.Point(145, 146);
             this.lblFloor.Name = "lblFloor";
             this.lblFloor.Size = new System.Drawing.Size(0, 21);
             this.lblFloor.TabIndex = 22;
@@ -361,6 +406,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(20, 63);
             this.label9.Name = "label9";
@@ -371,6 +417,7 @@
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
+            this.lblBalance.BackColor = System.Drawing.Color.Transparent;
             this.lblBalance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblBalance.Location = new System.Drawing.Point(150, 219);
             this.lblBalance.Name = "lblBalance";
@@ -380,6 +427,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(20, 129);
             this.label8.Name = "label8";
@@ -390,8 +438,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(150, 63);
+            this.label7.Location = new System.Drawing.Point(145, 63);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 27;
@@ -400,6 +449,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label13.Location = new System.Drawing.Point(20, 202);
             this.label13.Name = "label13";
@@ -410,8 +460,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(150, 129);
+            this.label5.Location = new System.Drawing.Point(145, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 17);
             this.label5.TabIndex = 26;
@@ -420,8 +471,9 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(150, 202);
+            this.label14.Location = new System.Drawing.Point(145, 202);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(32, 17);
             this.label14.TabIndex = 26;
@@ -429,20 +481,20 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(9, 311);
+            this.textBox2.Location = new System.Drawing.Point(9, 295);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(210, 212);
+            this.textBox2.Size = new System.Drawing.Size(210, 228);
             this.textBox2.TabIndex = 31;
             // 
             // lblda
             // 
             this.lblda.AutoSize = true;
-            this.lblda.Location = new System.Drawing.Point(41, 282);
+            this.lblda.BackColor = System.Drawing.Color.Transparent;
+            this.lblda.Location = new System.Drawing.Point(41, 265);
             this.lblda.Name = "lblda";
             this.lblda.Size = new System.Drawing.Size(0, 21);
             this.lblda.TabIndex = 39;
@@ -450,6 +502,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.pbWeather2);
             this.groupBox1.Controls.Add(this.lblWeather);
@@ -481,7 +534,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 282);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 265);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 24);
             this.pictureBox1.TabIndex = 42;
@@ -489,7 +543,8 @@
             // 
             // pbWeather2
             // 
-            this.pbWeather2.Location = new System.Drawing.Point(69, 282);
+            this.pbWeather2.BackColor = System.Drawing.Color.Transparent;
+            this.pbWeather2.Location = new System.Drawing.Point(69, 265);
             this.pbWeather2.Name = "pbWeather2";
             this.pbWeather2.Size = new System.Drawing.Size(26, 24);
             this.pbWeather2.TabIndex = 42;
@@ -498,8 +553,8 @@
             // lblWeather
             // 
             this.lblWeather.AutoSize = true;
-            this.lblWeather.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblWeather.Location = new System.Drawing.Point(119, 256);
+            this.lblWeather.BackColor = System.Drawing.Color.Transparent;
+            this.lblWeather.Location = new System.Drawing.Point(119, 237);
             this.lblWeather.Name = "lblWeather";
             this.lblWeather.Size = new System.Drawing.Size(42, 21);
             this.lblWeather.TabIndex = 41;
@@ -508,46 +563,19 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 256);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(7, 237);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 21);
             this.label10.TabIndex = 40;
             this.label10.Text = "当前天气情况";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "图片";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "CanteenName";
-            this.Column8.HeaderText = "名称";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "Price";
-            this.Column9.HeaderText = "价格";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "Path";
-            this.Column10.HeaderText = "路径";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 610);
             this.Controls.Add(this.groupBox2);
@@ -557,7 +585,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "主界面";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.groupBox2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -579,17 +607,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnShoppingCart;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddShoppingCart;
         private System.Windows.Forms.ToolStripMenuItem 购买ToolStripMenuItem;
@@ -615,10 +633,20 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pbWeather2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewImageColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewImageColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

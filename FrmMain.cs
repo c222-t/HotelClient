@@ -45,7 +45,7 @@ namespace HotelClient
                     if (shu < 2)
                         nfl.ShowBalloonTip(500, "歪嘴大酒店提醒您", "您的房间还有一天到期 请及时续费", ToolTipIcon.Info);
                     
-                    menu.Show();
+                     menu.Show();
                     this.Hide();
                 }
                 else
